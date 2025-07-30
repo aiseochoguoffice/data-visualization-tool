@@ -1,0 +1,321 @@
+.App {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.card {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background-color: white;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+
+/* 범례 스타일 개선 */
+.chart-container canvas {
+  margin-bottom: 20px;
+}
+
+/* 드래그 앤 드롭 영역 스타일 */
+.drag-drop-zone {
+  min-height: 100vh;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.drag-drop-zone.drag-over {
+  background-color: rgba(102, 126, 234, 0.1);
+  border: 2px dashed #667eea;
+  border-radius: 10px;
+}
+
+.drag-drop-zone.drag-over::before {
+  content: "📁 파일을 여기에 드롭하세요";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(102, 126, 234, 0.9);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.data-preview-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #e9ecef;
+}
+
+.table {
+  font-size: 0.9rem;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  border-top: none;
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form-select, .form-control {
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus, .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.display-4 {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.lead {
+  color: #6c757d;
+}
+
+.chart-renderer-container {
+  position: relative;
+}
+
+.chart-renderer-container .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.download-btn {
+  border: 1px solid #dee2e6;
+  background-color: white;
+  color: #6c757d;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #adb5bd;
+  color: #495057;
+  transform: none;
+  box-shadow: none;
+}
+
+.chart-renderer-container .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.d3-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* 간트 차트 스타일 */
+.gantt-chart-container {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.gantt-chart {
+  min-width: 740px;
+  max-width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 다운로드용 간트차트 스타일 */
+.gantt-chart-container.download-mode {
+  overflow: visible;
+  width: auto;
+  min-width: 740px;
+}
+
+.gantt-chart-container.download-mode .gantt-chart {
+  overflow: visible;
+  width: 740px;
+  min-width: 740px;
+}
+
+.gantt-chart-container.download-mode .gantt-body {
+  max-height: none;
+  overflow: visible;
+}
+
+.gantt-header {
+  display: table;
+  background-color: #fff3cd;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: bold;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.gantt-chart-container.download-mode .gantt-header {
+  width: 740px;
+}
+
+.gantt-task-header {
+  width: 200px;
+  padding: 6px 4px;
+  border-right: 1px solid #dee2e6;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.85em;
+}
+
+.gantt-timeline-header {
+  display: table-cell;
+  width: 540px;
+  border-right: none;
+  white-space: nowrap;
+}
+
+.gantt-chart-container.download-mode .gantt-timeline-header {
+  width: 540px;
+}
+
+.gantt-month-header {
+  display: inline-block;
+  width: 45px;
+  padding: 10px 2px;
+  text-align: center;
+  border-right: 1px solid #dee2e6;
+  font-size: 0.85em;
+  font-weight: bold;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.gantt-month-header:last-child {
+  border-right: none;
+}
+
+
+
+.gantt-body {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.gantt-row {
+  display: table;
+  border-bottom: 1px solid #dee2e6;
+  min-height: 40px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.gantt-chart-container.download-mode .gantt-row {
+  width: 740px;
+}
+
+.gantt-task-name {
+  width: 200px;
+  padding: 6px 4px;
+  border-right: 1px solid #dee2e6;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 0.85em;
+}
+
+.gantt-timeline {
+  display: table-cell;
+  width: 540px;
+  border-right: none;
+  white-space: nowrap;
+}
+
+.gantt-chart-container.download-mode .gantt-timeline {
+  width: 540px;
+}
+
+.gantt-month-cell {
+  display: inline-block;
+  width: 45px;
+  padding: 10px 2px;
+  border-right: 1px solid #dee2e6;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.gantt-month-cell:last-child {
+  border-right: none;
+}
+
+.gantt-bar {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gantt-bar:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+
+ 
